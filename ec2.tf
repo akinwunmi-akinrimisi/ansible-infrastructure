@@ -27,17 +27,18 @@ resource "aws_instance" "ansible_server" {
   }
 }
 
+###### uncomment this block for lab 2
 
-resource "aws_instance" "web_servers" {
-  ami             = data.aws_ssm_parameter.instance_ami_linux.value
-  instance_type   = var.instance_type
-  count           = 2
-  subnet_id       = aws_subnet.my_public_subnet01.id
-  security_groups = [aws_security_group.ak-sg.id]
-  key_name        = var.key_name
+# resource "aws_instance" "web_servers" {
+#   ami             = data.aws_ssm_parameter.instance_ami_linux.value
+#   instance_type   = var.instance_type
+#   count           = 2
+#   subnet_id       = aws_subnet.my_public_subnet01.id
+#   security_groups = [aws_security_group.ak-sg.id]
+#   key_name        = var.key_name
 
-  tags = {
-    Name = "web_server"
-  }
+#   tags = {
+#     Name = "web_server"
+#   }
 
-}
+# }
