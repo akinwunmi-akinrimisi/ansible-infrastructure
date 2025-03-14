@@ -3,7 +3,7 @@ resource "aws_instance" "app_servers" {
   count           = 2
   instance_type   = var.instance_type
   subnet_id       = aws_subnet.my_public_subnet02.id
-  security_groups = [aws_security_group.app_server_sg.id]
+  security_groups = [aws_security_group.ansible_server_sg.id]
   key_name        = var.key_name
 
   tags = {
@@ -37,7 +37,7 @@ resource "aws_instance" "ansible_server" {
    instance_type   = var.instance_type
    count           = 2
    subnet_id       = aws_subnet.my_public_subnet02.id
-   security_groups = [aws_security_group.web-server-sg.id]
+   security_groups = [aws_security_group.ansible_server_sg.id]
    key_name        = var.key_name
 
    tags = {
