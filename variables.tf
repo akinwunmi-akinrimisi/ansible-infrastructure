@@ -7,7 +7,7 @@ variable "instance_type" {
 }
 
 variable "key_name" {
-  default = "replace with your keypair name"
+  default = "wordpress"
 }
 
 variable "cidr_block" {
